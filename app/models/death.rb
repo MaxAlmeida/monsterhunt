@@ -1,0 +1,3 @@
+class Death < Category
+  
+end

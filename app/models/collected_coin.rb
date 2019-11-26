@@ -1,0 +1,2 @@
+class CollectedCoin < Category
+end
