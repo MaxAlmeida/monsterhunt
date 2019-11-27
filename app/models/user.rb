@@ -1,8 +1,9 @@
 class User < ApplicationRecord
+    has_secure_password
     has_many :deaths
     has_many :killed_monsters
     has_many :collected_coins
     has_many :trophies
 
-    validates :name, presence :true
+    validates :name, presence: true
 end
