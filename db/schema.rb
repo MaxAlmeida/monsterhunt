@@ -10,36 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191126124857) do
+ActiveRecord::Schema.define(version: 20191127013008) do
 
   create_table "collected_coins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "value"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_collected_coins_on_user_id"
   end
 
   create_table "deaths", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_deaths_on_user_id"
   end
 
   create_table "killed_monsters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "user_id"
-    t.integer "monster_id"
+    t.bigint "user_id"
+    t.bigint "monster_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["monster_id"], name: "index_killed_monsters_on_monster_id"
     t.index ["user_id"], name: "index_killed_monsters_on_user_id"
   end
 
-  create_table "level_points", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "level_scores", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "level"
     t.string "category"
-    t.integer "quantity"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20191126124857) do
 
   create_table "trophies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
-    t.bigint "level_point_id"
+    t.bigint "level_score_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["level_point_id"], name: "index_trophies_on_level_point_id"
+    t.index ["level_score_id"], name: "index_trophies_on_level_score_id"
     t.index ["user_id"], name: "index_trophies_on_user_id"
   end
 
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 20191126124857) do
     t.string "name"
   end
 
-  add_foreign_key "trophies", "level_points"
+  add_foreign_key "collected_coins", "users"
+  add_foreign_key "deaths", "users"
+  add_foreign_key "killed_monsters", "monsters"
+  add_foreign_key "killed_monsters", "users"
+  add_foreign_key "trophies", "level_scores"
   add_foreign_key "trophies", "users"
 end
