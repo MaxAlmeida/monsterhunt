@@ -19,6 +19,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem "bulma-rails", "~> 0.8.0"
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -38,8 +41,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+  gem "rspec-rails", "~> 3.1.0"
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
