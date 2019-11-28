@@ -1,13 +1,14 @@
 <div class="container">
-    <div class="row justify-content-center score ">
+    <div id="user_score" class="row justify-content-center score ">
         <div class="col-sm">
-          <p>Tropheus: <%= @user.trophies.count %> </p>
+          <p id="trophy">Troféus: <%= @user.trophies.count %> </p>
         </div>
         <div class="col-sm">
            <p>Monstros mortos: <%= @user.killed_monsters.count %></p> 
         </div>
         <div class="col-sm">
-           <p>Moedas Coletadas: <%= @user.collected_coins.count %></p> 
+           <p id="collected_coins">Moedas Coletadas:
+                <%= render partial: 'collected_coins/user_collected_coins', locals: {user: @user} %></p> 
         </div>
         <div class="col-sm">
             <p>Mortes: <%= @user.deaths.count %></p>
@@ -15,7 +16,8 @@
     </div>
     <div class= "actions">
         <div class="row justify-content-center">
-            <button> Coletar Moedas</button>    
+            <%= button_to 'Coletar Moedas', {controller: 'collected_coins',
+                    action: 'create',  collected_coin: {user_id: @user.id, value: 10}},remote: true  %>   
         </div>
         <div class="row justify-content-center">
             <button>Matar Turtle</button>

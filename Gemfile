@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem "font-awesome-rails"
 gem 'font-awesome-sass', '~> 5.11.2'
+gem 'rails-ujs'
+
 
 
 # Use Capistrano for deployment
