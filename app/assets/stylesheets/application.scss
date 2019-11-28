@@ -13,6 +13,7 @@
 
  */
  @import "bootstrap";
+ @import "font-awesome-sprockets";
  @import "font-awesome";
 
 
@@ -33,4 +34,19 @@ section {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #000;
+}
+
+.actions {
+    margin-top: 50px;
+}
+
+.actions button {
+    margin-bottom: 20px;
+}
+
+.score {
+    background: #EFF1F3;
+    padding-bottom: 50px;
+    font-size: 20px;
+    font-weight: bold;
 }

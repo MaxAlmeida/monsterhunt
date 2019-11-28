@@ -1,1 +1,32 @@
-<h1> <%= @user.name %></h1>
+<div class="container">
+    <div class="row justify-content-center score ">
+        <div class="col-sm">
+          <p>Tropheus: <%= @user.trophies.count %> </p>
+        </div>
+        <div class="col-sm">
+           <p>Monstros mortos: <%= @user.killed_monsters.count %></p> 
+        </div>
+        <div class="col-sm">
+           <p>Moedas Coletadas: <%= @user.collected_coins.count %></p> 
+        </div>
+        <div class="col-sm">
+            <p>Mortes: <%= @user.deaths.count %></p>
+        </div>
+    </div>
+    <div class= "actions">
+        <div class="row justify-content-center">
+            <button> Coletar Moedas</button>    
+        </div>
+        <div class="row justify-content-center">
+            <button>Matar Turtle</button>
+        </div>
+        <div class="row justify-content-center">
+            <button>Matar Bowser</button>
+        </div>
+        <div class="row justify-content-center">
+                <div class="row ">
+            <button> Droga! Fui atingido</button>
+        </div>
+    </div>
+    
+</div>
