@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
   resources :collected_coins, only: [:create]
+  resources :killed_monsters, only: [:create]
+  resources :deaths, only: [:create]
   root 'home#index'
   resources :sessions, only: [:new, :create, :destroy]
 
