@@ -9,14 +9,16 @@ class KilledMonster < Category
       level_score = LevelScore.find_by category: category_name, score: monster_score
       puts "Monster #{self.monster.name} score: #{monster_score}"
       
-      #Reach some level score?
+      #reach some level score?
       if level_score
         unless others_reached_score(level_score).include? false
           Trophy.create(user_id: user_id, level_score_id: level_score.id) 
+          flash.now[:success] = "Name or password is invalid"
         end
       end
   end
 
+  #verify if level score was reached in others monsters categories 
   def others_reached_score(level_score)
     check_reached_score = Array.new
     Monster.where.not(id: self.monster_id).each do |monster|
@@ -24,7 +26,7 @@ class KilledMonster < Category
       score_by_monster = killed_monsters_each_monster.size
       puts "monster name: #{monster.name} score: #{score_by_monster}" 
       check_reached_score << (score_by_monster >= level_score.score ? true : false)
-      puts "Ponntuação : #{check_reached_score}"
+      puts "Pontuação : #{check_reached_score}"
     end
     check_reached_score
   end

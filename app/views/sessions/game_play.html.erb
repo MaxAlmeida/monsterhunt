@@ -22,19 +22,19 @@
     <div class= "actions">
         <div class="row justify-content-center">
             <%= button_to 'Coletar Moedas', {controller: 'collected_coins', action: 'create',
-                collected_coin: {user_id: @user.id, value: 10}}, remote: true
+                collected_coin: {user_id: @user.id, value: 10}}, remote: true, class: "btn btn-warning btn-block" 
             %>   
         </div>
         <% @monsters.each do |monster| %>
         <div class="row justify-content-center">
             <%= button_to "Matar #{monster.name}", {controller: 'killed_monsters', action: 'create',
-                killed_monster: {user_id: @user.id, monster_name: monster.name}}, remote: true
+                killed_monster: {user_id: @user.id, monster_name: monster.name}}, remote: true, class: "btn btn-primary btn-block"
              %>
         </div>
         <% end %>
         <div class="row justify-content-center">
             <%= button_to 'Droga! Fui atingido', {controller: 'deaths', action: 'create',
-                death: {user_id: @user.id}}, remote: true
+                death: {user_id: @user.id}}, remote: true, class: "btn btn-danger"
              %>
         </div>
     </div>
