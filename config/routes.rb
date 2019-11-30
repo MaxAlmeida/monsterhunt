@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :deaths, only: [:create]
   root 'home#index'
   resources :sessions, only: [:new, :create, :destroy]
+  resources :trophies
 
 
   get 'signup', to: 'users#new', as: 'signup'

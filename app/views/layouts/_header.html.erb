@@ -9,6 +9,9 @@
     <div class="collapse navbar-collapse" id="containerNavbarSuportaded">
         <ul class="navbar-nav ml-auto">   
             <% if current_user %>
+            <li class="nav-item">
+               <a  class="nav-link" href="/trophies" title="Troféus"><i class ="fa fa-trophy"></i></a>
+            </li>
             <li class="nav-item dropdown user-info">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <%= current_user.name %>
