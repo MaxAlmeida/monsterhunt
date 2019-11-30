@@ -19,7 +19,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "bulma-rails", "~> 0.8.0"
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 
@@ -49,7 +48,6 @@ group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
 
