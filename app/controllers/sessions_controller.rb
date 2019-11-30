@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
 
   def game_play
     @user = User.find_by_id(session[:user_id])
+    @monsters = Monster.all
 
     redirect_to login_url, flash: { notice: "Need login to play" } unless @user
   end
