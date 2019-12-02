@@ -3,20 +3,24 @@
     <div class="col">
         <h1 class="text-center">Troféus</h1>
         <br>
-        <% @user.scored_categories.each do |category| %>
-          <div class="list-group align-items-center text-center">
-              <a href="#" class="list-group-item list-group-item-action active">
-                <%= category %>
-              </a>
-              <% @trophies.each do |trophy| %>
-                <% if trophy.level_score.category == category %>
-                  <a href="#" class="list-group-item list-group-item-action text-center">
-                    Level <%= trophy.level_score.level %>
-                  </a>
-                <% end %>    
-              <% end %>      
-          </div>
-        <br>
+        <% if @trophies.empty? %>
+          <p>Não possui troféus</p>
+        <% else %>
+          <% @user.scored_categories.each do |category| %>
+            <div class="list-group align-items-center text-center">
+                <a href="#" class="list-group-item list-group-item-action active">
+                  <%= category %>
+                </a>
+                <% @trophies.each do |trophy| %>
+                  <% if trophy.level_score.category == category %>
+                    <a href="#" class="list-group-item list-group-item-action text-center">
+                      Level <%= trophy.level_score.level %>
+                    </a>
+                  <% end %>
+                <% end %>
+            </div>
+          <br>
+        <% end %>
       <% end %>
     </div>
   </div>
