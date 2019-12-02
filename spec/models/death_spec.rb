@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CollectedCoin, :type => :model do
+RSpec.describe Death, :type => :model do
     let(:user) { FactoryBot.create(:user)}
 
     it "is valid with valid atrributes" do
