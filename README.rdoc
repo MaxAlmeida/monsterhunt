@@ -27,7 +27,10 @@ Uma simples aplicação para contabilizar moedas coletadas, monstros mortos e tr
   
   Para executar os testes:
       RAILS_ENV=test rake db:migrate
+      
       rake RAILS_ENV=test db:seed
+      
+      rspec
 
 
 * Rodando a aplicação
