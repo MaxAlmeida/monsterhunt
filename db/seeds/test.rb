@@ -23,11 +23,11 @@ level_death_point = LevelScore.create([
 ])
 
 level_killed_monster_point = LevelScore.create([
-    {level:1, category: 'killedMonster', score: 1},
-    {level:2, category: 'killedMonster', score: 10},
-    {level:3, category: 'killedMonster', score: 100},
-    {level:4, category: 'killedMonster', score: 500},
-    {level:5, category: 'killedMonster', score: 1000},
+    {level:1, category: 'KilledMonster', score: 1},
+    {level:2, category: 'KilledMonster', score: 10},
+    {level:3, category: 'KilledMonster', score: 100},
+    {level:4, category: 'KilledMonster', score: 500},
+    {level:5, category: 'KilledMonster', score: 1000},
 ])
 
 monsters = Monster.create([
