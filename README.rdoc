@@ -1,0 +1,35 @@
+== README -  MonsterHunt
+Uma simples aplicação para contabilizar moedas coletadas, monstros mortos e troféus ganhos.
+
+  
+* Versão Ruby
+
+  2.3.3
+
+* Dependência de sistema
+
+  * mysql 5.7.27
+
+* configuração
+
+  * Em config/database.yml, adicione o usuário e senha apropriados.
+
+
+* Criação do banco de dados
+      rake db:create
+
+* Inicialização do banco de dados   
+      rake db:seed
+
+* Execução da suite de testes
+
+  Foi criado um arquivo que popula o banco de dados com alguns dados em /db/seeds/test.rb. Lá são definidos alguns nivel de pontos específicos para execução dos testes.
+  
+  Para executar os testes:
+      RAILS_ENV=test rake db:migrate
+      rake RAILS_ENV=test db:seed
+
+
+* Rodando a aplicação
+
+      rails s
