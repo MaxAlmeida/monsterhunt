@@ -13,3 +13,6 @@ test:
   username: root
   password: root
   encoding: utf8
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
